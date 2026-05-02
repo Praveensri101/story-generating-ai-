@@ -1,0 +1,203 @@
+# story-generating-ai-
+This Python program generates a random story based on the user’s input like topic, character, place, genre, and story length.
+
+import random
+
+print("------ Simple Story Generator (Python Project) ------")
+
+topic = input("Enter story topic: ")
+character = input("Enter main character name: ")
+place = input("Enter place: ")
+genre = input("Enter genre (horror/fantasy/romance/adventure): ").lower()
+length = input("Enter story length (short/medium/long): ").lower()
+
+# ---------------- SHORT STORIES ----------------
+short_stories = {
+    "horror": [
+        f"One night, {character} went to {place} to find the truth about {topic}. Suddenly, a scary sound came from behind. {character} ran away in fear.",
+        f"In {place}, {character} heard rumors about {topic}. That night, a shadow followed {character} silently."
+    ],
+    "fantasy": [
+        f"In {place}, {character} found a magical object related to {topic}. Suddenly, a bright light appeared and everything changed.",
+        f"{character} visited {place} and discovered {topic}. A magical portal opened and {character} stepped inside."
+    ],
+    "romance": [
+        f"In {place}, {character} met someone special while thinking about {topic}. That moment became unforgettable.",
+        f"{character} went to {place} and found love unexpectedly while learning about {topic}."
+    ],
+    "adventure": [
+        f"{character} traveled to {place} to explore {topic}. After facing challenges, {character} returned as a hero.",
+        f"In {place}, {character} started a journey about {topic} and found a hidden treasure."
+    ]
+}
+
+# ---------------- MEDIUM STORIES ----------------
+medium_stories = {
+    "horror": [
+        f"Late at night, {character} entered {place} to investigate {topic}. The wind was cold and the surroundings were silent. Suddenly, footsteps echoed behind. {character} turned back but saw nobody. A dark figure appeared near the trees, and {character} realized it was not a normal night.",
+        f"In the middle of {place}, {character} searched for clues about {topic}. Strange whispers surrounded the air. A broken door opened slowly by itself. When {character} stepped inside, the lights went out. A loud scream filled the room, and {character} ran outside trembling."
+    ],
+    "fantasy": [
+        f"Once upon a time, {character} lived near {place}. One day, {character} discovered a secret about {topic}. A magical bird appeared and gave a shining stone. Suddenly, the sky turned golden and a hidden kingdom appeared. {character} was chosen to protect the magical power.",
+        f"In {place}, {character} found an ancient book about {topic}. When the book opened, glowing letters floated in the air. A portal appeared and a wizard invited {character} into a fantasy world. {character} accepted the adventure and stepped into the unknown."
+    ],
+    "romance": [
+        f"One evening in {place}, {character} was thinking deeply about {topic}. Suddenly, someone arrived and started a friendly conversation. Slowly, their friendship became strong. Every day, they met again and again. Soon, {character} realized that love had entered the heart.",
+        f"In {place}, {character} joined an event related to {topic}. There, {character} met someone kind and charming. They talked for hours and laughed together. Over time, their bond became stronger, and {character} understood that true love feels peaceful and beautiful."
+    ],
+    "adventure": [
+        f"{character} found a mysterious map in {place}. The map was connected to {topic}. Without wasting time, {character} started the journey. Mountains, rivers, and dangerous forests came in the way. After many struggles, {character} reached the final destination and discovered a hidden treasure.",
+        f"In {place}, {character} heard stories about {topic}. Curious and brave, {character} started exploring. Along the way, {character} faced wild animals and tricky paths. Finally, {character} found the secret behind {topic} and returned with great success."
+    ]
+}
+
+# ---------------- LONG STORIES ----------------
+long_stories = {
+    "horror": [
+        f"It was a silent midnight when {character} decided to visit {place} to uncover the mystery of {topic}. "
+        f"The villagers warned {character} not to go there, but curiosity was stronger than fear. "
+        f"As {character} entered the place, the air became cold and the trees moved as if they were alive. "
+        f"Suddenly, a strange whisper called {character}'s name. {character} turned back, but nobody was there.\n\n"
+        f"Then, a shadow appeared near an old building. The door opened slowly with a creaking sound. "
+        f"{character} walked inside carefully. The walls were covered with strange symbols. "
+        f"A sudden loud noise came from the ceiling, and dust fell down. "
+        f"{character} felt something watching.\n\n"
+        f"Suddenly, the lights went off. In the darkness, a terrifying voice said, 'Leave now!' "
+        f"{character} tried to run, but the door slammed shut. "
+        f"A ghostly figure appeared holding an object linked to {topic}. "
+        f"With full courage, {character} grabbed the object and shouted a prayer. "
+        f"The ghost screamed and disappeared.\n\n"
+        f"The door opened again. {character} escaped from {place} and promised never to return. "
+        f"From that day, {character} never spoke about {topic} again.",
+
+        f"In {place}, there was a haunted house connected to {topic}. "
+        f"Many people entered, but nobody returned. Still, {character} wanted to know the truth. "
+        f"At night, {character} walked slowly towards the house with a torch.\n\n"
+        f"The door was half open. Inside, everything was broken and covered in dust. "
+        f"Suddenly, a mirror fell down and shattered. "
+        f"In the mirror pieces, {character} saw a scary face smiling. "
+        f"Terrified, {character} stepped back.\n\n"
+        f"A cold wind blew and the torch went out. "
+        f"Whispers filled the room, and footsteps started moving around. "
+        f"{character} ran upstairs and found a secret room. "
+        f"There was an old diary about {topic}.\n\n"
+        f"When {character} touched the diary, the room started shaking. "
+        f"A ghost appeared and demanded the diary back. "
+        f"{character} threw the diary into the fire and the ghost screamed loudly. "
+        f"Suddenly, everything became silent.\n\n"
+        f"{character} escaped from the haunted house. "
+        f"The next morning, the house was gone as if it never existed."
+    ],
+
+    "fantasy": [
+        f"Long ago, in the magical land of {place}, lived a brave young person named {character}. "
+        f"One day, {character} found an ancient scroll about {topic}. "
+        f"The scroll started glowing as soon as it was touched. "
+        f"A magical fairy appeared and told {character} that a great destiny was waiting.\n\n"
+        f"The fairy gave {character} a golden sword and a magical ring. "
+        f"Suddenly, the ground opened and a hidden pathway appeared. "
+        f"{character} entered the path and reached a kingdom filled with dragons and flying castles.\n\n"
+        f"Inside the kingdom, an evil sorcerer had captured the magical power of {topic}. "
+        f"The king begged {character} to save the land. "
+        f"{character} accepted the challenge and started the journey.\n\n"
+        f"Along the way, {character} crossed enchanted forests, dangerous rivers, and dark caves. "
+        f"Finally, {character} reached the sorcerer’s tower. "
+        f"A fierce battle began. The sorcerer used powerful spells, but {character} used the ring’s magic to block them.\n\n"
+        f"In the end, {character} defeated the sorcerer and freed the magical power of {topic}. "
+        f"The kingdom celebrated with joy. "
+        f"{character} returned home as a hero, and the fairy promised that magic would always protect {place}.",
+
+        f"In the peaceful village near {place}, {character} always dreamed of adventure. "
+        f"One evening, a strange star fell from the sky. "
+        f"{character} followed the light and found a magical stone linked to {topic}.\n\n"
+        f"Suddenly, a portal opened and pulled {character} inside. "
+        f"{character} landed in a fantasy world where animals could talk and trees could walk. "
+        f"A wise old wizard explained that the stone was the key to controlling {topic}.\n\n"
+        f"But an evil dragon wanted the stone to destroy the world. "
+        f"{character} teamed up with a brave warrior and a magical horse. "
+        f"They traveled across kingdoms and solved puzzles.\n\n"
+        f"Finally, they faced the dragon near a volcano. "
+        f"{character} used courage and intelligence to trick the dragon and throw the stone into the magical lake. "
+        f"The dragon disappeared forever.\n\n"
+        f"The wizard thanked {character} and sent {character} back to {place}. "
+        f"From that day, {character} became a legend in both worlds."
+    ],
+
+    "romance": [
+        f"In the beautiful town of {place}, {character} lived a simple life. "
+        f"One day, while working on {topic}, {character} met a stranger who seemed kind and friendly. "
+        f"At first, it was just a small conversation, but slowly, their bond grew.\n\n"
+        f"They started meeting daily near the same spot. "
+        f"They spoke about dreams, life, and the meaning of happiness. "
+        f"{character} began to feel special whenever they were together.\n\n"
+        f"One day, they both decided to work together on {topic}. "
+        f"They faced many struggles but supported each other. "
+        f"Their friendship turned into deep love.\n\n"
+        f"Suddenly, a misunderstanding occurred and they stopped talking. "
+        f"{character} felt heartbroken and lonely. "
+        f"After many days, {character} realized that true love should not be lost because of ego.\n\n"
+        f"{character} went to the same place in {place} and waited. "
+        f"Finally, the loved one came back. They apologized, hugged, and promised to never leave again. "
+        f"From that day, their love story became the most beautiful chapter of their life.",
+
+        f"{character} was known as a hardworking person in {place}. "
+        f"One day, during an event about {topic}, {character} met someone with a charming smile. "
+        f"They spoke for hours and felt a strong connection.\n\n"
+        f"Days passed, and their friendship grew into love. "
+        f"Both supported each other in difficult times. "
+        f"{character} felt that life became more meaningful.\n\n"
+        f"One evening, under the moonlight, {character} decided to express feelings. "
+        f"With a trembling voice, {character} confessed love. "
+        f"The other person smiled and accepted.\n\n"
+        f"They promised to stay together forever. "
+        f"Their love became a symbol of trust, care, and happiness in {place}."
+    ],
+
+    "adventure": [
+        f"One day, {character} was walking through {place} when a mysterious old man handed over a map. "
+        f"The map was connected to the legend of {topic}. "
+        f"The old man said, 'This map will change your destiny.'\n\n"
+        f"{character} decided to begin the adventure immediately. "
+        f"The journey started through thick forests and rocky mountains. "
+        f"Along the way, {character} met a traveler who joined the mission.\n\n"
+        f"They crossed dangerous rivers and fought wild animals. "
+        f"After days of traveling, they reached an ancient temple hidden inside a cave. "
+        f"Inside the temple, puzzles and traps tested their bravery.\n\n"
+        f"Finally, they found a golden box containing the secret of {topic}. "
+        f"But suddenly, thieves attacked them. "
+        f"A big fight happened. Using smart thinking, {character} escaped with the treasure.\n\n"
+        f"After returning to {place}, {character} became famous. "
+        f"The adventure of {topic} became a legend told for generations.",
+
+        f"In {place}, people often spoke about the hidden mystery of {topic}. "
+        f"{character}, a brave explorer, decided to find the truth. "
+        f"The journey was not easy. Storms, deserts, and forests made it dangerous.\n\n"
+        f"Along the way, {character} discovered clues carved on stones. "
+        f"Each clue brought {character} closer to the destination. "
+        f"After many struggles, {character} reached a hidden valley.\n\n"
+        f"In the valley, there was an ancient treasure guarded by traps. "
+        f"{character} carefully solved the traps and entered a secret chamber. "
+        f"There, the truth about {topic} was finally revealed.\n\n"
+        f"{character} returned back as a hero and inspired everyone in {place}."
+    ]
+}
+
+# ---------------- SELECT STORY BASED ON LENGTH ----------------
+if length == "short":
+    story = random.choice(short_stories.get(genre, short_stories["adventure"]))
+
+elif length == "medium":
+    story = random.choice(medium_stories.get(genre, medium_stories["adventure"]))
+
+elif length == "long":
+    story = random.choice(long_stories.get(genre, long_stories["adventure"]))
+
+else:
+    story = "Invalid story length! Please choose short / medium / long."
+
+print("\n------ Generated Story ------\n")
+print(story)
+print("\n------ Thank You ------")
+
+
+
